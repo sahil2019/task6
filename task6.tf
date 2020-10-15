@@ -157,8 +157,7 @@ resource "aws_db_instance" "sahil-db" {
   skip_final_snapshot  = true
 }
 
-resource "null_resource" "null-1"
-{
+resource "null_resource" "null-1"{
 depends_on=[
             aws_eks_cluster.sahil_eks_cluster,
             aws_eks_node_group.example,
@@ -203,10 +202,9 @@ resource "kubernetes_deployment" "wordpress-instance" {
    }
   }
 }
+  }
 
-
-
-resource "kubernetes_service" "sahil_lb" {
+  resource "kubernetes_service" "sahil_lb" {
 depends_on=[
 kubernetes_deployment.wordpress-instance
 ]
